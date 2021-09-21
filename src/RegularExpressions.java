@@ -50,26 +50,27 @@ public class RegularExpressions
 
     static boolean Task1(String s)
     {
-        Pattern pat = Pattern.compile("(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])");
+        Pattern pat = Pattern.compile("^(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])$");
         Matcher m = pat.matcher(s);
         return m.matches();
     }
 
     static boolean Task2(String s)
     {
-        Pattern p = Pattern.compile("\\{?([0-9a-fA-F]{8})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{12})\\}?");
+        Pattern p = Pattern.compile("^(\\{([0-9a-fA-F]{8})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{12})\\})$|" +
+                "^(([0-9a-fA-F]{8})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{12}))$");
         Matcher m = p.matcher(s);
         return m.matches();
     }
     static boolean Task3(String s)
     {
-        Pattern p = Pattern.compile("(https?://)?(www\\.)?[^_-]([\\w&&[^_\\s]]{2,})[^_-]\\.[\\w]{1,}");
+        Pattern p = Pattern.compile("^(https?://)?(www\\.)?[^_-]([\\w&&[^_\\s]]{2,})[^_-]\\.[\\w]{1,}$");
         Matcher m = p.matcher(s);
         return m.matches();
     }
     static boolean Task4(String s)
     {
-        Pattern p = Pattern.compile("(?=\\w*[0-9])(?=\\w*[A-Z])(?=\\w*[a-z]).{8,}");
+        Pattern p = Pattern.compile("^(?=\\w*[0-9])(?=\\w*[A-Z])(?=\\w*[a-z])\\w{8,}$");
         Matcher m = p.matcher(s);
         return m.matches();
     }

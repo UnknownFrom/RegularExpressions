@@ -51,6 +51,11 @@ public class RegularExpressionsTest {
     }
 
     @Test
+    public void task2_4() {
+        Assert.assertEquals(false,RegularExpressions.Task2("e02fd0e4-00fd-090A-ca30-0d00a0038ba0}"));
+    }
+
+    @Test
     public void task3_1() {
         Assert.assertEquals(true,RegularExpressions.Task3("http://www.example.com"));
     }
