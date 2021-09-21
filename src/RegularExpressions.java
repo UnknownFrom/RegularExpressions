@@ -6,15 +6,45 @@ public class RegularExpressions
 {
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        if(Task4(s))
-        {
-            System.out.println("Подходит");
-        }
-        else if (!Task4(s))
-        {
-            System.out.println("Не подходит");
+        System.out.print("Введите текст:");
+        String s = new Scanner(System.in).nextLine();
+        System.out.print("Выберите задание(1-4):");
+        String choice = new Scanner(System.in).nextLine();
+        while (choice != "0") {
+            switch (choice) {
+                case "1":
+                    if (Task1(s)) {
+                        System.out.println("Подходит");
+                    } else {
+                        System.out.println("Не подходит");
+                    }
+                    break;
+                case "2":
+                    if (Task2(s)) {
+                        System.out.println("Подходит");
+                    } else {
+                        System.out.println("Не подходит");
+                    }
+                    break;
+                case "3":
+                    if (Task3(s)) {
+                        System.out.println("Подходит");
+                    } else {
+                        System.out.println("Не подходит");
+                    }
+                    break;
+                case "4":
+                    if (Task4(s)) {
+                        System.out.println("Подходит");
+                    } else {
+                        System.out.println("Не подходит");
+                    }
+                    break;
+            }
+            System.out.print("Введите текст:");
+            s = new Scanner(System.in).nextLine();
+            System.out.print("Выберите задание(1-4):");
+            choice = new Scanner(System.in).nextLine();
         }
     }
 
@@ -39,7 +69,7 @@ public class RegularExpressions
     }
     static boolean Task4(String s)
     {
-        Pattern p = Pattern.compile("[a-z]+[A-Z]+[0-9]+");
+        Pattern p = Pattern.compile("(?=\\w*[0-9])(?=\\w*[A-Z])(?=\\w*[a-z]).{8,}");
         Matcher m = p.matcher(s);
         return m.matches();
     }
