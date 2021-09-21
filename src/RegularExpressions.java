@@ -57,7 +57,7 @@ public class RegularExpressions
 
     static boolean Task2(String s)
     {
-        Pattern p = Pattern.compile("([0-9a-fA-F]{8})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{12})");
+        Pattern p = Pattern.compile("\\{?([0-9a-fA-F]{8})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{4})\\-([0-9a-fA-F]{12})\\}?");
         Matcher m = p.matcher(s);
         return m.matches();
     }
