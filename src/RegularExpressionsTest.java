@@ -36,6 +36,11 @@ public class RegularExpressionsTest {
     }
 
     @Test
+    public void task1_7() {
+        Assert.assertEquals(false,RegularExpressions.Task1("01.200.1.0"));
+    }
+
+    @Test
     public void task2_1() {
         Assert.assertEquals(true,RegularExpressions.Task2("e02fd0e4-00fd-090A-ca30-0d00a0038ba0"));
     }

@@ -50,7 +50,7 @@ public class RegularExpressions
 
     static boolean Task1(String s)
     {
-        Pattern pat = Pattern.compile("^(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])\\.(1?\\d?\\d|2[0-5][0-5])$");
+        Pattern pat = Pattern.compile("^([1-9]?\\d|1\\d\\d|2[0-5][0-5])\\.([1-9]?\\d|1\\d\\d|2[0-5][0-5])\\.([1-9]?\\d|1\\d\\d|2[0-5][0-5])\\.([1-9]?\\d|1\\d\\d|2[0-5][0-5])$");
         Matcher m = pat.matcher(s);
         return m.matches();
     }
