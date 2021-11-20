@@ -1,107 +1,105 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class RegularExpressionsTest {
 
     @Test
-    public void task1_1() {
-        Assert.assertEquals(true,RegularExpressions.Task1("127.0.0.1"));
+    public void isIP1_1() {
+        Assert.assertEquals(true,RegularExpressions.isIP("127.0.0.1"));
     }
 
     @Test
-    public void task1_2() {
-        Assert.assertEquals(true,RegularExpressions.Task1("255.255.255.0"));
+    public void isIP1_2() {
+        Assert.assertEquals(true,RegularExpressions.isIP("255.255.255.0"));
     }
 
     @Test
-    public void task1_3() {
-        Assert.assertEquals(false,RegularExpressions.Task1("1300.6.7.8"));
+    public void isIP1_3() {
+        Assert.assertEquals(false,RegularExpressions.isIP("1300.6.7.8"));
     }
 
     @Test
-    public void task1_4() {
-        Assert.assertEquals(false,RegularExpressions.Task1("abc.def.gha.bcd"));
+    public void isIP1_4() {
+        Assert.assertEquals(false,RegularExpressions.isIP("abc.def.gha.bcd"));
     }
 
     @Test
-    public void task1_5() {
-        Assert.assertEquals(false,RegularExpressions.Task1("abc.127.0.0"));
+    public void isIP1_5() {
+        Assert.assertEquals(false,RegularExpressions.isIP("abc.127.0.0"));
     }
 
     @Test
-    public void task1_6() {
-        Assert.assertEquals(false,RegularExpressions.Task1("010.200.1.0"));
+    public void isIP1_6() {
+        Assert.assertEquals(false,RegularExpressions.isIP("010.200.1.0"));
     }
 
     @Test
-    public void task1_7() {
-        Assert.assertEquals(false,RegularExpressions.Task1("01.200.1.0"));
+    public void isIP1_7() {
+        Assert.assertEquals(false,RegularExpressions.isIP("01.200.1.0"));
     }
 
     @Test
-    public void task2_1() {
-        Assert.assertEquals(true,RegularExpressions.Task2("e02fd0e4-00fd-090A-ca30-0d00a0038ba0"));
+    public void isGUID2_1() {
+        Assert.assertEquals(true,RegularExpressions.isGUID("e02fd0e4-00fd-090A-ca30-0d00a0038ba0"));
     }
 
     @Test
-    public void task2_2() {
-        Assert.assertEquals(false,RegularExpressions.Task2("e02fd0e400fd090Aca300d00a0038ba0"));
+    public void isGUID2_2() {
+        Assert.assertEquals(false,RegularExpressions.isGUID("e02fd0e400fd090Aca300d00a0038ba0"));
     }
 
     @Test
-    public void task2_3() {
-        Assert.assertEquals(true,RegularExpressions.Task2("{e02fd0e4-00fd-090A-ca30-0d00a0038ba0}"));
+    public void isGUID2_3() {
+        Assert.assertEquals(true,RegularExpressions.isGUID("{e02fd0e4-00fd-090A-ca30-0d00a0038ba0}"));
     }
 
     @Test
-    public void task2_4() {
-        Assert.assertEquals(false,RegularExpressions.Task2("e02fd0e4-00fd-090A-ca30-0d00a0038ba0}"));
+    public void isGUID2_4() {
+        Assert.assertEquals(false,RegularExpressions.isGUID("e02fd0e4-00fd-090A-ca30-0d00a0038ba0}"));
     }
 
     @Test
-    public void task3_1() {
-        Assert.assertEquals(true,RegularExpressions.Task3("http://www.example.com"));
+    public void isURL3_1() {
+        Assert.assertEquals(true,RegularExpressions.isURL("http://www.example.com"));
     }
 
     @Test
-    public void task3_2() {
-        Assert.assertEquals(true,RegularExpressions.Task3("http://example.com"));
+    public void isURL3_2() {
+        Assert.assertEquals(true,RegularExpressions.isURL("http://example.com"));
     }
 
     @Test
-    public void task3_3() {
-        Assert.assertEquals(false,RegularExpressions.Task3("Just Text"));
+    public void isURL3_3() {
+        Assert.assertEquals(false,RegularExpressions.isURL("Just Text"));
     }
 
     @Test
-    public void task3_4() {
-        Assert.assertEquals(false,RegularExpressions.Task3("http://a.com"));
+    public void isURL3_4() {
+        Assert.assertEquals(false,RegularExpressions.isURL("http://a.com"));
     }
 
     @Test
-    public void task4_1() {
-        Assert.assertEquals(true,RegularExpressions.Task4("C00l_Pass"));
+    public void isPassword4_1() {
+        Assert.assertEquals(true,RegularExpressions.isPassword("C00l_Pass"));
     }
 
     @Test
-    public void task4_2() {
-        Assert.assertEquals(true,RegularExpressions.Task4("SupperPas1"));
+    public void isPassword4_2() {
+        Assert.assertEquals(true,RegularExpressions.isPassword("SupperPas1"));
     }
 
     @Test
-    public void task4_3() {
-        Assert.assertEquals(false,RegularExpressions.Task4("Cool_pass"));
+    public void isPassword4_3() {
+        Assert.assertEquals(false,RegularExpressions.isPassword("Cool_pass"));
     }
 
     @Test
-    public void task4_4() {
-        Assert.assertEquals(false,RegularExpressions.Task4("C001"));
+    public void isPassword4_4() {
+        Assert.assertEquals(false,RegularExpressions.isPassword("C001"));
     }
 
     @Test
-    public void task4_5() {
-        Assert.assertEquals(false,RegularExpressions.Task4("___8934ERGHERH___"));
+    public void isPassword4_5() {
+        Assert.assertEquals(false,RegularExpressions.isPassword("___8934ERGHERH___"));
     }
 }
